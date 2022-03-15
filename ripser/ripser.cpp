@@ -695,7 +695,7 @@ public:
                         births_and_deaths_by_dim[0].push_back(birth);
                         births_and_deaths_by_dim[0].push_back(death);
                         if (do_cocycles){
-                            thiscocycle.clear()
+                            thiscocycle.clear();
                             cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
