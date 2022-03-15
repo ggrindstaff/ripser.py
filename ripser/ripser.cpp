@@ -693,6 +693,9 @@ public:
                     if (death > birth) {
                         births_and_deaths_by_dim[0].push_back(birth);
                         births_and_deaths_by_dim[0].push_back(death);
+                        if (do_cocycles){
+                            cocycles_by_dim[0].push_back(vertices_of_edge[0]);
+                        }
                     }
                 }
                 dset.link(u, v);
