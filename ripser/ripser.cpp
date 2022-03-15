@@ -678,6 +678,7 @@ public:
         std::sort(edges.rbegin(), edges.rend(),
                   greater_diameter_or_smaller_index<diameter_index_t>());
         std::vector<index_t> vertices_of_edge(2);
+        std::vector<int> thiscocycle;
         for (auto e : edges) {
             get_simplex_vertices(get_index(e), 1, n, vertices_of_edge.rbegin());
             index_t u = dset.find(vertices_of_edge[0]),
@@ -694,7 +695,8 @@ public:
                         births_and_deaths_by_dim[0].push_back(birth);
                         births_and_deaths_by_dim[0].push_back(death);
                         if (do_cocycles){
-                            cocycles_by_dim[0].push_back(vertices_of_edge[0]);
+                            thiscocycle.clear()
+                            cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
                 }
