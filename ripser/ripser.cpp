@@ -696,7 +696,9 @@ public:
                         births_and_deaths_by_dim[0].push_back(death);
                         if (do_cocycles){
                             thiscocycle.clear();
-                            thiscocycle.push_back((int) u);
+                            if (dset.get_birth(u) < dset.get_birth(v)){
+                                thiscocycle.push_back((int) v);
+                            }
                             cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
