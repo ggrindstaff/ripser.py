@@ -695,12 +695,8 @@ public:
                         births_and_deaths_by_dim[0].push_back(birth);
                         births_and_deaths_by_dim[0].push_back(death);
                         if (do_cocycles){
-                            if (dset.get_birth(u) > dset.get_birth(v)){
-                                cocycles_by_dim[0].push_back(u);
-                            }
-                            else {
-                                cocycles_by_dim[0].push_back(v);
-                            }
+                            thiscocycle.clear();
+                            cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
                 }
