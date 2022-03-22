@@ -696,6 +696,7 @@ public:
                         births_and_deaths_by_dim[0].push_back(death);
                         if (do_cocycles){
                             thiscocycle.clear();
+                            thiscocycle.push_back((int) u);
                             cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
