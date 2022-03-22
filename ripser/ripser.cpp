@@ -702,6 +702,7 @@ public:
                             else { 
                                 thiscocycle.push_back((int) u);
                             }
+                            thiscocycle.push_back(1);
                             cocycles_by_dim[0].push_back(thiscocycle);
                         }
                     }
