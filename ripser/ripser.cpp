@@ -718,6 +718,12 @@ public:
                 births_and_deaths_by_dim[0].push_back(dset.get_birth(i));
                 births_and_deaths_by_dim[0].push_back(
                     std::numeric_limits<value_t>::infinity());
+                if (do_cocycles){
+                     thiscocycle.clear();
+                     thiscocycle.push_back((int) i);
+                     thiscocycle.push_back(1);
+                     cocycles_by_dim[0].push_back(thiscocycle);
+                }
             }
     }
 
