@@ -420,14 +420,11 @@ public:
         y = find(y);
         if (x == y)
             return;
-        if (rank[x] > rank[y]) {
-            parent[y] = x;
-            birth[x] = std::min(birth[x], birth[y]);  // Elder rule
-        } else {
+        if (birth[x]<=birth[y]){  // Elder rule: if x is born first, make parent
+            parent[y]=x; 
+        }
+        else{
             parent[x] = y;
-            birth[y] = std::min(birth[x], birth[y]);  // Elder rule
-            if (rank[x] == rank[y])
-                ++rank[y];
         }
     }
 };
