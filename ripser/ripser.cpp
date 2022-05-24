@@ -386,12 +386,14 @@ class union_find
     std::vector<index_t> parent;
     std::vector<uint8_t> rank;
     std::vector<value_t> birth;
+    std::vector<uint8_t> size;
 
 public:
     union_find(index_t n) : parent(n), rank(n, 0), birth(n, 0)
     {
         for (index_t i = 0; i < n; ++i)
             parent[i] = i;
+            size[i] = 1;
     }
 
     void set_birth(index_t i, value_t val) { birth[i] = val; }
@@ -422,9 +424,11 @@ public:
             return;
         if (birth[x]<=birth[y]){  // Elder rule: if x is born first, make parent
             parent[y]=x; 
+            size[x] = size[x]+size[y];
         }
         else{
             parent[x] = y;
+            size[y] = size[x]+size[y];
         }
     }
 };
