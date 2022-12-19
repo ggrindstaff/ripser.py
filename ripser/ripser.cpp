@@ -695,9 +695,11 @@ public:
                             thiscocycle.clear();
                             if (dset.get_birth(u) < dset.get_birth(v)){
                                 thiscocycle.push_back((int) v);
+                                thiscocycle.push_back((int) vertices_of_edge[1]);
                             }
                             else { 
                                 thiscocycle.push_back((int) u);
+                                thiscocycle.push_back((int) vertices_of_edge[0]);
                             }
                             thiscocycle.push_back(1);
                             cocycles_by_dim[0].push_back(thiscocycle);
@@ -718,6 +720,7 @@ public:
                 if (do_cocycles){
                      thiscocycle.clear();
                      thiscocycle.push_back((int) i);
+                     thiscocycle.push_back(std::numeric_limits<value_t>::infinity());
                      thiscocycle.push_back(1);
                      cocycles_by_dim[0].push_back(thiscocycle);
                 }
