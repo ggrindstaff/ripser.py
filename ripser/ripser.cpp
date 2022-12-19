@@ -719,7 +719,7 @@ public:
                 if (do_cocycles){
                      thiscocycle.clear();
                      thiscocycle.push_back((int) i);
-                     thiscocycle.push_back(std::numeric_limits<value_t>::infinity());
+                     thiscocycle.push_back(-1);
                      cocycles_by_dim[0].push_back(thiscocycle);
                 }
             }
